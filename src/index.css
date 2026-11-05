@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap');
+@import "tailwindcss";
+
+@theme { --font-sans: 'DM Sans', sans-serif; --font-serif: 'Source Serif 4', Georgia, serif; }
+@layer base {
+  html { @apply scroll-smooth; }
+  body { @apply m-0 min-w-[320px] bg-[#071a19] font-sans text-slate-300 antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  button, textarea { font: inherit; }
+  h1, h2, h3, h4, p { @apply mt-0; }
+  a { -webkit-tap-highlight-color: transparent; }
+  em { @apply font-serif font-normal not-italic text-teal-200; }
+}
+@layer components {
+  .section-title { @apply text-3xl font-medium leading-tight tracking-[-.055em] text-white sm:text-4xl; }
+  .section-copy { @apply text-sm leading-7 text-slate-400; }
+  .label { @apply text-[10px] font-semibold uppercase tracking-[.14em] text-slate-500; }
+  .hero-scroll-control {
+    -webkit-tap-highlight-color: transparent;
+    animation: hero-scroll-float 2.8s ease-in-out infinite;
+    outline: none;
+  }
+  .hero-scroll-control:focus { outline: none; }
+  .hero-scroll-control:focus-visible {
+    outline: 2px solid rgb(94 234 212 / 0.9);
+    outline-offset: 4px;
+  }
+}
+
+@keyframes hero-scroll-float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-control { animation: none; }
+}

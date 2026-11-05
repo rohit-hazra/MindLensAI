@@ -1,0 +1,22 @@
+@reference "./index.css";
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
+
+/* Keep citation code readable while allowing long lines to scroll horizontally. */
+pre {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  white-space: pre !important;
+}
+
+#analyzer > div > div:first-child {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+#analyzer > div > div:first-child > div { justify-content: flex-start !important; }
